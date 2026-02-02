@@ -7,6 +7,7 @@ public class Program
     public static int gameSelect = 1;
     private static string gameSelected = "";
     public static int money = 1000;
+    public static string balance = Rainbowify.StoreColor($"${money}", "green");
     public static void Main(string[] args)
     {
         Console.Clear();
@@ -28,42 +29,49 @@ public class Program
                 ConsoleKeyInfo keyInfo = Console.ReadKey(true);
                 if (keyInfo.Key == ConsoleKey.D1 || keyInfo.Key == ConsoleKey.NumPad1)
                 {
+                    PlayPing();
                     gameSelect = 1;
                     gameSelected = "You chose Black Jack!";
                     break;
                 }
                 else if (keyInfo.Key == ConsoleKey.D2 || keyInfo.Key == ConsoleKey.NumPad2)
                 {
+                    PlayPing();
                     gameSelect = 2;
                     gameSelected = "You chose Texas Hold 'Em!";
                     break;
                 }
                 else if (keyInfo.Key == ConsoleKey.D3 || keyInfo.Key == ConsoleKey.NumPad3)
                 {
+                    // PlayPing();
                     gameSelect = 3;
                     gameSelected = "You chose Roulette!";
                     break;
                 }
                 else if (keyInfo.Key == ConsoleKey.D4 || keyInfo.Key == ConsoleKey.NumPad4)
                 {
+                    PlayPing();
                     gameSelect = 4;
                     gameSelected = "You chose Horse Racing!";
                     break;
                 }
                 else if (keyInfo.Key == ConsoleKey.D5 || keyInfo.Key == ConsoleKey.NumPad5)
                 {
+                    PlayPing();
                     gameSelect = 5;
                     gameSelected = "You chose Slots!";
                     break;
                 }
                 else if (keyInfo.Key == ConsoleKey.D6 || keyInfo.Key == ConsoleKey.NumPad6)
                 {
+                    PlayPing();
                     gameSelect = 6;
                     gameSelected = "You chose Poker!";
                     break;
                 }
                 else if (keyInfo.Key == ConsoleKey.D7 || keyInfo.Key == ConsoleKey.NumPad7)
                 {
+                    PlayPing();
                     gameSelect = 7;
                     gameSelected = "You chose Guess It!";
                     break;
@@ -75,7 +83,6 @@ public class Program
             }
         }
         booleanRepeat = false;
-        PlayPing();
         Thread.Sleep(2000);
         if (gameSelect == 1)
         {
@@ -87,7 +94,7 @@ public class Program
         }
         else if (gameSelect == 3)
         {
-
+            Roulette.EnterRoulette();
         }
         else if (gameSelect == 4)
         {
@@ -165,7 +172,6 @@ public class Program
         Thread.Sleep(150);
         if (boolean == true)
         {
-            boolean = false;
             RainbowFuncForGameSelect(s, booleanRepeat);
         }
         else if (boolean == false)
@@ -177,14 +183,14 @@ public class Program
     }
     public static void PlayPing()
     {
-        string audIoFile = "/workspaces/G.A.M.B.L.E./test.mp3";
+        string audIoFile = "/workspaces/G.A.M.B.L.E./PlayerSelection.mp3";
         using (var audioFile = new AudioFileReader(audIoFile))
         {
             using (var outputDevice = new WaveOutEvent())
             {
                 outputDevice.Init(audioFile);
                 outputDevice.Play();
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
                 outputDevice.Stop();
             }
         }
