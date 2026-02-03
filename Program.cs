@@ -3,9 +3,9 @@ using NAudio.Wave;
 public class Program
 {
     private static int i = 1;
-    private static bool booleanRepeat = true;
+    public static bool booleanRepeat = true;
     public static int gameSelect = 1;
-    private static string gameSelected = "";
+    public static string gameSelected = "";
     public static int money = 1000;
     public static string balance = Rainbowify.StoreColor($"${money}", "green");
     public static void Main(string[] args)
@@ -14,6 +14,16 @@ public class Program
         Rainbowify.WriteLineColor("Welcome to G.A.M.B.L.E.! \nA Game of Autonomous Magic Beholding Lesson-telling Events.", 220, 0, 0);
         Console.WriteLine("Press any key to continue...");
         Console.ReadKey(true);
+        GameSelect();
+    }
+    public static string GetBalance()
+    {
+        balance = Rainbowify.StoreColor($"${money}", "green");
+        return balance;
+    }
+    public static void GameSelect()
+    {
+        booleanRepeat = true;
         Task task = new Task(() =>
         {
             while (booleanRepeat)
@@ -29,14 +39,14 @@ public class Program
                 ConsoleKeyInfo keyInfo = Console.ReadKey(true);
                 if (keyInfo.Key == ConsoleKey.D1 || keyInfo.Key == ConsoleKey.NumPad1)
                 {
-                    PlayPing();
+                    // PlayPing();
                     gameSelect = 1;
                     gameSelected = "You chose Black Jack!";
                     break;
                 }
                 else if (keyInfo.Key == ConsoleKey.D2 || keyInfo.Key == ConsoleKey.NumPad2)
                 {
-                    PlayPing();
+                    // PlayPing();
                     gameSelect = 2;
                     gameSelected = "You chose Texas Hold 'Em!";
                     break;
@@ -50,28 +60,28 @@ public class Program
                 }
                 else if (keyInfo.Key == ConsoleKey.D4 || keyInfo.Key == ConsoleKey.NumPad4)
                 {
-                    PlayPing();
+                    // PlayPing();
                     gameSelect = 4;
                     gameSelected = "You chose Horse Racing!";
                     break;
                 }
                 else if (keyInfo.Key == ConsoleKey.D5 || keyInfo.Key == ConsoleKey.NumPad5)
                 {
-                    PlayPing();
+                    // PlayPing();
                     gameSelect = 5;
                     gameSelected = "You chose Slots!";
                     break;
                 }
                 else if (keyInfo.Key == ConsoleKey.D6 || keyInfo.Key == ConsoleKey.NumPad6)
                 {
-                    PlayPing();
+                    // PlayPing();
                     gameSelect = 6;
                     gameSelected = "You chose Poker!";
                     break;
                 }
                 else if (keyInfo.Key == ConsoleKey.D7 || keyInfo.Key == ConsoleKey.NumPad7)
                 {
-                    PlayPing();
+                    // PlayPing();
                     gameSelect = 7;
                     gameSelected = "You chose Guess It!";
                     break;
