@@ -41,7 +41,7 @@ public class Program
                 {
                     // PlayPing();
                     gameSelect = 1;
-                    gameSelected = "You chose Black Jack!";
+                    gameSelected = "You chose Blackjack!";
                     break;
                 }
                 else if (keyInfo.Key == ConsoleKey.D2 || keyInfo.Key == ConsoleKey.NumPad2)

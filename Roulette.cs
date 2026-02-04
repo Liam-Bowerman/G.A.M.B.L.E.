@@ -12,7 +12,7 @@ public static class Roulette
     public static void EnterRoulette()
     {
         Console.Clear();
-        Rainbowify.WriteLineColor("Welcome to the roulette table!", 255, 60, 170);
+        Rainbowify.WriteLineColor("Welcome to roulette!", 255, 60, 170);
         Console.WriteLine("\nStep up to the table.");
         Thread.Sleep(2000);
         StartRoulette();
